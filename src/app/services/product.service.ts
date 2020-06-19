@@ -19,4 +19,9 @@ export class ProductService {
   {
     return this.http.get<Product[]>(this.REST_API_SERVER, this.httpOption);
   }
+
+  createProduct(data: Product)
+  {
+    return this.http.post<Product>(this.REST_API_SERVER, data);
+  }
 }

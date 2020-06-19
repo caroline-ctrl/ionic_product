@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Un produit
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form (ngSubmit)="saveData()" *ngIf="!isSubmit">
+    <ion-item>
+      <ion-label>Titre</ion-label>
+      <ion-input type="texte" [(ngModel)]="product.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea [(ngModel)]="product.content" name="content"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date de creation</ion-label>
+      <ion-input type="texte" [(ngModel)]="product.created_at" name="created_at"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date de modification</ion-label>
+      <ion-input type="texte" [(ngModel)]="product.updated_at" name="updated_at"></ion-input>
+    </ion-item>
+    <ion-button type="submit" block>Créer un produit</ion-button>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  </form>
+
+  <ion-item *ngIf="isSubmit">
+    <h4>le produit a bien été créé</h4><br>
+    <ion-button (click)="newProduct" block>Ajouter un nouveau produit</ion-button>
+  </ion-item>
+
 </ion-content>
