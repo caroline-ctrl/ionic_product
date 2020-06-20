@@ -8,7 +8,7 @@ import { Product } from '../models/product.model';
   providedIn: 'root'
 })
 export class ProductService {
-  REST_API_SERVER = "http://localhost:3000/api/product/";
+  REST_API_SERVER = 'http://localhost:3000/api/product/';
   httpOption = {
     headers: new HttpHeaders({'content-type' : 'application/json'})
   };

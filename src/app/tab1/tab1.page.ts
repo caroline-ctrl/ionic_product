@@ -20,4 +20,11 @@ productArray: Product[];
     })
   }
 
+  deleteProduct(id)
+  {
+    this.productService.deleteProduct(id).subscribe(() => {
+      console.log('suppression réussi');
+    });
+  }
+
 }
