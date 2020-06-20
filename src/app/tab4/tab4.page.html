@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Un produit
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{currentProduct.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{currentProduct.content}}<br>
+      créé le : {{currentProduct.created_at}}<br>
+      modifié le : {{currentProduct.updated_at}}<br>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

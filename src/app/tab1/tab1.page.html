@@ -16,8 +16,8 @@
       {{product.content}}<br>
       créé le : {{product.created_at}}<br>
       modifié le : {{product.updated_at}}<br>
-      <ion-button size="small"  color="secondary">Voir</ion-button>
-      <ion-button size="small"  color="success" href="/tabs/tab3/{{product._id}}">Modifier</ion-button>
+      <ion-button size="small"  color="secondary" href="/tabs/byId/{{product._id}}">Voir</ion-button>
+      <ion-button size="small"  color="success" href="/tabs/update/{{product._id}}">Modifier</ion-button>
       <ion-button size="small"  color="danger" (click)="deleteProduct(product._id)">Supprimer</ion-button>
     </ion-card-content>
   </ion-card>
