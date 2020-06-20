@@ -17,7 +17,7 @@ productArray: Product[];
     this.productService.getAllProduct().subscribe(products => {
       this.productArray = products;
       console.log(this.productArray);
-    })
+    });
   }
 
   deleteProduct(id)

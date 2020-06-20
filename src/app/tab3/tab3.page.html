@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Modifier un produit
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form (ngSubmit)="updateData()" *ngIf="!isSubmit">
+    <ion-item>
+      <ion-label>Titre</ion-label>
+      <ion-input type="texte" [(ngModel)]="dataProduct.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea [(ngModel)]="dataProduct.content" name="content"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date de creation</ion-label>
+      <ion-input type="texte" [(ngModel)]="dataProduct.created_at" name="created_at"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date de modification</ion-label>
+      <ion-input type="texte" [(ngModel)]="dataProduct.updated_at" name="updated_at"></ion-input>
+    </ion-item>
+    <ion-button type="submit" block>Modifier le produit</ion-button>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  </form>
+
+  <ion-item *ngIf="isSubmit">
+    <h4>le produit a bien été modifié</h4><br>
+    <ion-button href="/tabs/tab1" block>Retour aux produits</ion-button>
+  </ion-item>
+
 </ion-content>
